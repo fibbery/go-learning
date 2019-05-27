@@ -20,6 +20,7 @@ func main() {
 		}
 		fmt.Println(resp.StatusCode)
 		_, err = io.Copy(os.Stdout, resp.Body)
+		resp.Body.Close()
 		if (err != nil) {
 			fmt.Fprintf(os.Stderr, "fetch : %v\n", err)
 			os.Exit(1)
