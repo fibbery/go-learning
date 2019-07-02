@@ -61,5 +61,12 @@ func main() {
 	fmt.Println(x.Has(1))
 	fmt.Println(x.Has(2))
 	fmt.Println(x.String())
+	fmt.Println(&x)
+	fmt.Println(x)
+	fmt.Println(32 << (^uint(0) >> 63))
+	fmt.Println(32 << (^uint32(0) >> 63))
+	fmt.Println(32 << (^uint64(0) >> 63))
+	fmt.Println(^uint(1))
+	fmt.Println(^uint(0))
+	fmt.Println(^1)
 }
-
