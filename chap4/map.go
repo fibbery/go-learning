@@ -3,7 +3,6 @@ package main
 import (
 	"fmt"
 	"log"
-	"runtime"
 	"time"
 	"unicode/utf8"
 )
@@ -53,6 +52,5 @@ func costtime(methodname string) func() {
 
 func double(x int) (result int) {
 	defer func() { fmt.Printf("double(%d) = %d\n", x, result) }()
-	runtime.Stack()
 	return x * x
 }
