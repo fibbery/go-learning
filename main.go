@@ -3,6 +3,8 @@ package main
 import (
 	"fmt"
 	"github.com/PuerkitoBio/goquery"
+	"github.com/shiena/ansicolor"
+	"github.com/sirupsen/logrus"
 	"golang.org/x/text/encoding/simplifiedchinese"
 	"log"
 	"net/http"
@@ -61,5 +63,10 @@ func decodeToGBK(text string) (string, error) {
 }
 
 func main() {
-	ExampleScrape()
+	//ExampleScrape()
+	// force colors on for TextFormatter
+	logrus.SetFormatter(&logrus.TextFormatter{ForceColors: true, FullTimestamp: true,})
+	//// then wrap the log output with it
+	logrus.SetOutput(ansicolor.NewAnsiColorWriter(os.Stdout))
+	logrus.WithField("name", "jiangnenghua").Infof("hello this is %s", "world")
 }
