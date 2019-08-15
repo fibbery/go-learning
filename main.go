@@ -1,10 +1,12 @@
 package main
 
 import (
+	"context"
 	"fmt"
 	"github.com/PuerkitoBio/goquery"
 	"github.com/shiena/ansicolor"
 	"github.com/sirupsen/logrus"
+	"go-learning/protobuff"
 	"golang.org/x/text/encoding/simplifiedchinese"
 	"log"
 	"net/http"
@@ -69,4 +71,7 @@ func main() {
 	//// then wrap the log output with it
 	logrus.SetOutput(ansicolor.NewAnsiColorWriter(os.Stdout))
 	logrus.WithField("name", "jiangnenghua").Infof("hello this is %s", "world")
+
 }
+
+

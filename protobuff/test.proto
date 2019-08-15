@@ -1,0 +1,17 @@
+syntax = "proto3";
+option go_package = "go-learning/protobuff";
+
+message HttpRequest {
+    string greeting = 1;
+    map<string, string> infos = 2;
+}
+
+message HttpResponse {
+    string reply = 1;
+    repeated string details = 2;
+}
+
+service HelloWorldService {
+    rpc SayHelloWorld (HttpRequest) returns (HttpResponse) {
+    }
+}

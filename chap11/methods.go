@@ -2,13 +2,11 @@ package main
 
 import (
 	"fmt"
+	"reflect"
 )
 
 func main() {
-	var data struct {
-		Labels     []string `http:"l"`
-		MaxResults int      `http:"max"`
-		Exact      bool     `http:"x"`
-	}
-	fmt.Print(data)
+	var x interface{} = 3
+	b := reflect.ValueOf(&x).Elem()
+	fmt.Println(b.CanAddr())
 }
